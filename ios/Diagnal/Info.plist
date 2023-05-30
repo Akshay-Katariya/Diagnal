@@ -36,7 +36,7 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -51,5 +51,19 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>titilliumweb_black.ttf</string>
+		<string>titilliumweb_bold.ttf</string>
+		<string>titilliumweb_bolditalic.ttf</string>
+		<string>titilliumweb_extralight.ttf</string>
+		<string>titilliumweb_extralightitalic.ttf</string>
+		<string>titilliumweb_italic.ttf</string>
+		<string>titilliumweb_light.ttf</string>
+		<string>titilliumweb_lightitalic.ttf</string>
+		<string>titilliumweb_regular.ttf</string>
+		<string>titilliumweb_semibold.ttf</string>
+		<string>titilliumweb_semibolditalic.ttf</string>
+	</array>
 </dict>
 </plist>

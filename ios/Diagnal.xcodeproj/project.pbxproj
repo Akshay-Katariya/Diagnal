@@ -14,6 +14,17 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-Diagnal-DiagnalTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-Diagnal-DiagnalTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		0F85F2E16321401D94037471 /* titilliumweb_black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B127B5510534FD6AD5F4B7F /* titilliumweb_black.ttf */; };
+		3153AA2EC16345D4B6CE6840 /* titilliumweb_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 009A79E0D8ED4F178DB06D06 /* titilliumweb_bold.ttf */; };
+		E6D008B821DD41E4973AD0B3 /* titilliumweb_bolditalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47AD741F68B44C5A92C615E2 /* titilliumweb_bolditalic.ttf */; };
+		5F6F203A8C2B44FB99E58B60 /* titilliumweb_extralight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E82F87A19E348DFBD194B30 /* titilliumweb_extralight.ttf */; };
+		A28F69333FA84AE1ACF43B0F /* titilliumweb_extralightitalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5B2326A3F0049DD86E002BF /* titilliumweb_extralightitalic.ttf */; };
+		F6249B137EDE4C238EE94208 /* titilliumweb_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A29FAF5CC53847B4ABD37D07 /* titilliumweb_italic.ttf */; };
+		47156EE505FF4A269C2B9869 /* titilliumweb_light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E91D89300D644BE91ABD8B9 /* titilliumweb_light.ttf */; };
+		0E1A5648C6D54DF29468A89D /* titilliumweb_lightitalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 653DDF88D5204BEEA4EAAC95 /* titilliumweb_lightitalic.ttf */; };
+		77D1E88549D2416F88836231 /* titilliumweb_regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09CBE7DC4BD644E294880979 /* titilliumweb_regular.ttf */; };
+		88D7174D314940F58326776E /* titilliumweb_semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D945C4DA56BB4491B57EAF1E /* titilliumweb_semibold.ttf */; };
+		26D8DF18A6B94118996A647D /* titilliumweb_semibolditalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF14605EDE1E46DD941891A1 /* titilliumweb_semibolditalic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +55,17 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Diagnal/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-Diagnal-DiagnalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diagnal-DiagnalTests.release.xcconfig"; path = "Target Support Files/Pods-Diagnal-DiagnalTests/Pods-Diagnal-DiagnalTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		1B127B5510534FD6AD5F4B7F /* titilliumweb_black.ttf */ = {isa = PBXFileReference; name = "titilliumweb_black.ttf"; path = "../src/assets/fonts/titilliumweb_black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		009A79E0D8ED4F178DB06D06 /* titilliumweb_bold.ttf */ = {isa = PBXFileReference; name = "titilliumweb_bold.ttf"; path = "../src/assets/fonts/titilliumweb_bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		47AD741F68B44C5A92C615E2 /* titilliumweb_bolditalic.ttf */ = {isa = PBXFileReference; name = "titilliumweb_bolditalic.ttf"; path = "../src/assets/fonts/titilliumweb_bolditalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6E82F87A19E348DFBD194B30 /* titilliumweb_extralight.ttf */ = {isa = PBXFileReference; name = "titilliumweb_extralight.ttf"; path = "../src/assets/fonts/titilliumweb_extralight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F5B2326A3F0049DD86E002BF /* titilliumweb_extralightitalic.ttf */ = {isa = PBXFileReference; name = "titilliumweb_extralightitalic.ttf"; path = "../src/assets/fonts/titilliumweb_extralightitalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A29FAF5CC53847B4ABD37D07 /* titilliumweb_italic.ttf */ = {isa = PBXFileReference; name = "titilliumweb_italic.ttf"; path = "../src/assets/fonts/titilliumweb_italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8E91D89300D644BE91ABD8B9 /* titilliumweb_light.ttf */ = {isa = PBXFileReference; name = "titilliumweb_light.ttf"; path = "../src/assets/fonts/titilliumweb_light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		653DDF88D5204BEEA4EAAC95 /* titilliumweb_lightitalic.ttf */ = {isa = PBXFileReference; name = "titilliumweb_lightitalic.ttf"; path = "../src/assets/fonts/titilliumweb_lightitalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		09CBE7DC4BD644E294880979 /* titilliumweb_regular.ttf */ = {isa = PBXFileReference; name = "titilliumweb_regular.ttf"; path = "../src/assets/fonts/titilliumweb_regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D945C4DA56BB4491B57EAF1E /* titilliumweb_semibold.ttf */ = {isa = PBXFileReference; name = "titilliumweb_semibold.ttf"; path = "../src/assets/fonts/titilliumweb_semibold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BF14605EDE1E46DD941891A1 /* titilliumweb_semibolditalic.ttf */ = {isa = PBXFileReference; name = "titilliumweb_semibolditalic.ttf"; path = "../src/assets/fonts/titilliumweb_semibolditalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +144,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				867B7FE6244749DEBF2C6296 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -147,6 +170,25 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		867B7FE6244749DEBF2C6296 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				1B127B5510534FD6AD5F4B7F /* titilliumweb_black.ttf */,
+				009A79E0D8ED4F178DB06D06 /* titilliumweb_bold.ttf */,
+				47AD741F68B44C5A92C615E2 /* titilliumweb_bolditalic.ttf */,
+				6E82F87A19E348DFBD194B30 /* titilliumweb_extralight.ttf */,
+				F5B2326A3F0049DD86E002BF /* titilliumweb_extralightitalic.ttf */,
+				A29FAF5CC53847B4ABD37D07 /* titilliumweb_italic.ttf */,
+				8E91D89300D644BE91ABD8B9 /* titilliumweb_light.ttf */,
+				653DDF88D5204BEEA4EAAC95 /* titilliumweb_lightitalic.ttf */,
+				09CBE7DC4BD644E294880979 /* titilliumweb_regular.ttf */,
+				D945C4DA56BB4491B57EAF1E /* titilliumweb_semibold.ttf */,
+				BF14605EDE1E46DD941891A1 /* titilliumweb_semibolditalic.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -244,6 +286,17 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				0F85F2E16321401D94037471 /* titilliumweb_black.ttf in Resources */,
+				3153AA2EC16345D4B6CE6840 /* titilliumweb_bold.ttf in Resources */,
+				E6D008B821DD41E4973AD0B3 /* titilliumweb_bolditalic.ttf in Resources */,
+				5F6F203A8C2B44FB99E58B60 /* titilliumweb_extralight.ttf in Resources */,
+				A28F69333FA84AE1ACF43B0F /* titilliumweb_extralightitalic.ttf in Resources */,
+				F6249B137EDE4C238EE94208 /* titilliumweb_italic.ttf in Resources */,
+				47156EE505FF4A269C2B9869 /* titilliumweb_light.ttf in Resources */,
+				0E1A5648C6D54DF29468A89D /* titilliumweb_lightitalic.ttf in Resources */,
+				77D1E88549D2416F88836231 /* titilliumweb_regular.ttf in Resources */,
+				88D7174D314940F58326776E /* titilliumweb_semibold.ttf in Resources */,
+				26D8DF18A6B94118996A647D /* titilliumweb_semibolditalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

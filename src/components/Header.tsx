@@ -1,6 +1,7 @@
 import React from 'react'
-import { ImageBackground, StyleSheet, Text, View } from 'react-native'
+import { ImageBackground, StyleSheet, View } from 'react-native'
 import { pxToDp } from '../utils'
+import AppText from './AppText'
 import ClickableImage from './ClickableImage'
 
 interface HeaderProps {
@@ -20,7 +21,7 @@ const Header: React.FC<HeaderProps> = ({ title, onBackPress, onSearchPress }) =>
     <ImageBackground source={headerImage} style={styles.header}>
       <View style={styles.container}>
         <ClickableImage source={backIcon} onPress={onBackPress} />
-        <Text style={styles.title}>{title}</Text>
+        <AppText style={styles.title}>{title}</AppText>
         <ClickableImage source={searchIcon} onPress={onSearchPress} />
       </View>
     </ImageBackground>
@@ -39,7 +40,7 @@ const styles = StyleSheet.create({
   },
   title: {
     color: 'white',
-    fontSize: 18,
+    fontSize: 24,
     alignSelf: 'center',
     marginLeft: 8,
     flex: 1,
