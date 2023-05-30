@@ -1,5 +1,6 @@
 import React from 'react'
-import { ImageBackground, StyleSheet, Text } from 'react-native'
+import { ImageBackground, StyleSheet, Text, View } from 'react-native'
+import { pxToDp } from '../utils'
 import ClickableImage from './ClickableImage'
 
 interface HeaderProps {
@@ -12,36 +13,36 @@ const backIcon = require('../assets/Back.png')
 const searchIcon = require('../assets/search.png')
 const headerImage = require('../assets/nav_bar.png')
 
-const handleBackPress = () => {
-  //
-}
-
-const handleSearch = () => {
-  //
-}
+const headerHeight = () => pxToDp(192 - 36)
 
 const Header: React.FC<HeaderProps> = ({ title, onBackPress, onSearchPress }) => {
   return (
-    <ImageBackground source={headerImage} style={styles.container}>
-      <ClickableImage source={backIcon} onPress={handleBackPress} />
-      <Text style={styles.title}>{title}</Text>
-      <ClickableImage source={searchIcon} onPress={handleSearch} />
+    <ImageBackground source={headerImage} style={styles.header}>
+      <View style={styles.container}>
+        <ClickableImage source={backIcon} onPress={onBackPress} />
+        <Text style={styles.title}>{title}</Text>
+        <ClickableImage source={searchIcon} onPress={onSearchPress} />
+      </View>
     </ImageBackground>
   )
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    height: 48,
+  header: {
+    height: headerHeight(),
     width: '100%',
   },
-
+  container: {
+    paddingHorizontal: pxToDp(30),
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
   title: {
     color: 'white',
     fontSize: 18,
+    alignSelf: 'center',
+    marginLeft: 8,
+    flex: 1,
   },
   searchButton: {
     padding: 8,
