@@ -1,5 +1,5 @@
 import React from 'react'
-import { Dimensions, Image, StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, Text, View } from 'react-native'
 import { getPoster, pxToDp } from '../utils'
 import { customTextStyle } from './TextStyles'
 
@@ -9,9 +9,6 @@ interface GridItemProps {
     'poster-image': string
   }
 }
-
-const windowWidth = Dimensions.get('window').width
-const windowHeight = Dimensions.get('window').height
 
 const GridItem: React.FC<GridItemProps> = ({ item }) => {
   return (
