@@ -1,6 +1,6 @@
 import React from 'react'
 import { Dimensions, Image, StyleSheet, Text, View } from 'react-native'
-import { getPoster } from '../utils'
+import { getPoster, pxToDp } from '../utils'
 import { customTextStyle } from './TextStyles'
 
 interface GridItemProps {
@@ -27,7 +27,7 @@ const GridItem: React.FC<GridItemProps> = ({ item }) => {
 const styles = StyleSheet.create({
   gridItem: {
     flex: 1,
-    margin: 8,
+    margin: pxToDp(30),
   },
   item: {
     flex: 1,

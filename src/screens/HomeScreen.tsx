@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react'
-import { FlatList, StyleSheet, View } from 'react-native'
+import { FlatList, StyleSheet, Text, View } from 'react-native'
 import GridItem from '../components/GridItem'
 import Header from '../components/Header'
 import SearchInput from '../components/SearchInput'
+import { pxToDp } from '../utils'
 
 const API_URL = 'https://www.jsonkeeper.com/b/CJI9'
 
 const HomeScreen = () => {
   const [data, setData] = useState([])
-  const [searchQuery, setSearchQuery] = useState('')
   const [title, setTitle] = useState('')
   const [isSearchVisible, setSearchVisible] = useState(false)
-
+  const [searchText, setSearchText] = useState('')
+  const [filteredData, setFilteredData] = useState([])
   useEffect(() => {
     fetchData()
   }, [])
@@ -23,12 +24,21 @@ const HomeScreen = () => {
     const content = await jsonData.page['content-items'].content
     setTitle(jsonData.page.title)
     setData(content)
+    setFilteredData(content)
   }
 
-  const handleSearch = () => {}
+  const toggleSearch = () => {
+    setSearchVisible(!isSearchVisible)
+  }
 
   const handleBack = () => {
-    // Handle back
+    // Clear search data
+  }
+
+  const performSearch = (text: string) => {
+    const filteredItems = data.filter((item) => item.name.toLowerCase().includes(text.toLowerCase()))
+    setFilteredData(filteredItems)
+    setSearchText(text)
   }
 
   const renderGridItem = ({ item }) => {
@@ -37,12 +47,13 @@ const HomeScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Header title={title} onBackPress={handleBack} onSearchPress={handleSearch} />
+      <Header title={title} onBackPress={handleBack} onSearchPress={toggleSearch} />
       {isSearchVisible && (
-        <SearchInput value={searchQuery} onChangeText={setSearchQuery} onSubmitEditing={handleSearch} />
+        <SearchInput value={searchText} onChangeText={performSearch} onSubmitEditing={toggleSearch} />
       )}
+
       <FlatList
-        data={data}
+        data={filteredData}
         renderItem={renderGridItem}
         keyExtractor={(item, index) => index.toString()}
         numColumns={3}
@@ -50,6 +61,7 @@ const HomeScreen = () => {
         showsHorizontalScrollIndicator={false}
         columnWrapperStyle={{}}
         contentContainerStyle={styles.contentContainerStyle}
+        ListEmptyComponent={<Text style={styles.noDataText}>{`No data available 🤷`}</Text>}
       />
     </View>
   )
@@ -61,8 +73,15 @@ const styles = StyleSheet.create({
   },
   contentContainerStyle: {
     justifyContent: 'space-between', // Equal spacing between rows
-    paddingHorizontal: 10, // Horizontal padding for equal spacing
-    paddingTop: 10, // Top padding for equal spacing
+    paddingHorizontal: pxToDp(30), // Horizontal padding for equal spacing
+    paddingTop: pxToDp(36), // Top padding for equal spacing
+  },
+  noDataText: {
+    flex: 1,
+    fontSize: 24,
+    fontFamily: 'titilliumweb_regular',
+    alignSelf: 'center',
+    marginTop: 20,
   },
 })
 
