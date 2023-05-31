@@ -15,6 +15,7 @@ const useDataFetching = () => {
           throw new Error('Failed to fetch pageData')
         }
         const jsonData = await response.json()
+        console.log('Data==>',jsonData)
         setPageData(jsonData)
       } catch (e) {
         setError(e.message)

@@ -10,6 +10,7 @@ interface SearchInputProps {
 const SearchInput: React.FC<SearchInputProps> = ({ value, onChangeText, onSubmitEditing }) => {
   return (
     <TextInput
+      autoFocus
       style={styles.searchInput}
       placeholder="Search"
       value={value}
@@ -26,6 +27,7 @@ const styles = StyleSheet.create({
     borderColor: 'gray',
     borderRadius: 8,
     paddingHorizontal: 10,
+    marginHorizontal: 10,
     marginBottom: 10,
   },
 })

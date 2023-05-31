@@ -48,10 +48,6 @@ const styles = StyleSheet.create({
   searchButton: {
     padding: 8,
   },
-  searchIcon: {
-    width: 24,
-    height: 24,
-  },
 })
 
 export default Header
