@@ -1,67 +1,53 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { FlatList, StyleSheet, Text, View } from 'react-native'
 import GridItem from '../components/GridItem'
 import Header from '../components/Header'
 import SearchInput from '../components/SearchInput'
+import useDataFetching from '../hooks/useDataFetching'
 import { pxToDp } from '../utils'
 
-const API_URL = 'https://www.jsonkeeper.com/b/CJI9'
-
 const HomeScreen = () => {
-  const [data, setData] = useState([])
-  const [title, setTitle] = useState('')
-  const [isSearchVisible, setSearchVisible] = useState(false)
-  const [searchText, setSearchText] = useState('')
-  const [filteredData, setFilteredData] = useState([])
-  useEffect(() => {
-    fetchData()
-  }, [])
+  const [searchQuery, setSearchQuery] = useState('')
+  const { data, title, handleLoadMore } = useDataFetching([])
+  const [showSearch, setShowSearch] = useState(false)
+  const [hasSearchResults, setHasSearchResults] = useState(true)
 
-  const fetchData = async () => {
-    //call API or get from JSON
-    const pageData = await await fetch(API_URL)
-    const jsonData = await pageData.json()
-    const content = await jsonData.page['content-items'].content
-    setTitle(jsonData.page.title)
-    setData(content)
-    setFilteredData(content)
+  interface Content {
+    name: string
+    'poster-image': string
   }
 
-  const toggleSearch = () => {
-    setSearchVisible(!isSearchVisible)
+  const toggleSearch = () => setShowSearch(!showSearch)
+  const clearSearch = () => {}
+
+  const handleSearch = (query: string) => {
+    setSearchQuery(query)
+    const filteredData = data.filter((item: Content) => item.name.toLowerCase().includes(query.toLowerCase()))
+    setHasSearchResults(filteredData.length > 0 || query === '')
   }
 
-  const handleBack = () => {
-    // Clear search data
-  }
+  const filteredData = data.filter((item: Content) => item.name.toLowerCase().includes(searchQuery.toLowerCase()))
 
-  const performSearch = (text: string) => {
-    const filteredItems = data.filter((item) => item.name.toLowerCase().includes(text.toLowerCase()))
-    setFilteredData(filteredItems)
-    setSearchText(text)
-  }
-
-  const renderGridItem = ({ item }) => {
-    return <GridItem item={item} />
-  }
+  const renderListItem = ({ item }) => <GridItem item={item} />
 
   return (
     <View style={styles.container}>
-      <Header title={title} onBackPress={handleBack} onSearchPress={toggleSearch} />
-      {isSearchVisible && (
-        <SearchInput value={searchText} onChangeText={performSearch} onSubmitEditing={toggleSearch} />
-      )}
+      <Header title={title} onBackPress={clearSearch} onSearchPress={toggleSearch} />
+
+      {showSearch && <SearchInput value={searchQuery} onChangeText={handleSearch} onSubmitEditing={toggleSearch} />}
+      {!hasSearchResults && <Text style={styles.noDataText}>{`No search results found 🤷`}</Text>}
 
       <FlatList
         data={filteredData}
-        renderItem={renderGridItem}
-        keyExtractor={(item, index) => index.toString()}
+        renderItem={renderListItem}
+        keyExtractor={(item, index) => `${item.name}_${index}`}
         numColumns={3}
+        onEndReached={handleLoadMore}
+        onEndReachedThreshold={0.8}
         showsVerticalScrollIndicator={false}
         showsHorizontalScrollIndicator={false}
         columnWrapperStyle={{}}
         contentContainerStyle={styles.contentContainerStyle}
-        ListEmptyComponent={<Text style={styles.noDataText}>{`No data available 🤷`}</Text>}
       />
     </View>
   )
@@ -70,18 +56,15 @@ const HomeScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: 'black',
   },
   contentContainerStyle: {
-    justifyContent: 'space-between', // Equal spacing between rows
-    paddingHorizontal: pxToDp(30), // Horizontal padding for equal spacing
-    paddingTop: pxToDp(36), // Top padding for equal spacing
+    paddingVertical: pxToDp(16),
   },
   noDataText: {
-    flex: 1,
-    fontSize: 24,
-    fontFamily: 'titilliumweb_regular',
     alignSelf: 'center',
-    marginTop: 20,
+    marginVertical: pxToDp(16),
+    fontSize: 16,
   },
 })
 
