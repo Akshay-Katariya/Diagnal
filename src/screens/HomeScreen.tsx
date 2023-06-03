@@ -18,7 +18,12 @@ const HomeScreen = () => {
   }
 
   const toggleSearch = () => setShowSearch(!showSearch)
-  const clearSearch = () => {}
+
+  const clearSearch = () => {
+    setSearchQuery('')
+    setShowSearch(false)
+    setHasSearchResults(true)
+  }
 
   const handleSearch = (query: string) => {
     setSearchQuery(query)
