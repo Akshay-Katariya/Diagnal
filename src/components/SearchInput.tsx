@@ -12,7 +12,7 @@ const SearchInput: React.FC<SearchInputProps> = ({ value, onChangeText, onSubmit
     <TextInput
       autoFocus
       style={styles.searchInput}
-      placeholder="Search"
+      placeholder="Search movie"
       value={value}
       onChangeText={onChangeText}
       onSubmitEditing={onSubmitEditing}
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   searchInput: {
     height: 40,
     borderWidth: 1,
-    borderColor: 'gray',
+    borderColor: 'white',
     borderRadius: 8,
     paddingHorizontal: 10,
     marginHorizontal: 10,

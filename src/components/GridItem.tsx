@@ -29,7 +29,6 @@ const styles = StyleSheet.create({
   item: {
     flex: 1,
     height: 180, // Adjust the item height as needed
-    backgroundColor: 'red',
     justifyContent: 'center',
   },
   image: {

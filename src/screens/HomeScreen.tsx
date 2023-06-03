@@ -1,16 +1,18 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FlatList, StyleSheet, Text, View } from 'react-native'
 import GridItem from '../components/GridItem'
 import Header from '../components/Header'
 import SearchInput from '../components/SearchInput'
 import useDataFetching from '../hooks/useDataFetching'
-import { pxToDp } from '../utils'
+
+const MIN_LIMIT = 3
 
 const HomeScreen = () => {
   const [searchQuery, setSearchQuery] = useState('')
   const { data, title, handleLoadMore } = useDataFetching([])
   const [showSearch, setShowSearch] = useState(false)
   const [hasSearchResults, setHasSearchResults] = useState(true)
+  const [filteredData, setFilteredData] = useState<Content[]>([])
 
   interface Content {
     name: string
@@ -27,11 +29,18 @@ const HomeScreen = () => {
 
   const handleSearch = (query: string) => {
     setSearchQuery(query)
-    const filteredData = data.filter((item: Content) => item.name.toLowerCase().includes(query.toLowerCase()))
-    setHasSearchResults(filteredData.length > 0 || query === '')
   }
 
-  const filteredData = data.filter((item: Content) => item.name.toLowerCase().includes(searchQuery.toLowerCase()))
+  useEffect(() => {
+    if (searchQuery.length >= MIN_LIMIT) {
+      const filteredData = data.filter((item: Content) => item.name.toLowerCase().includes(searchQuery.toLowerCase()))
+      setFilteredData(filteredData)
+      setHasSearchResults(filteredData.length > 0)
+    } else {
+      setFilteredData(data)
+      setHasSearchResults(true)
+    }
+  }, [data, searchQuery])
 
   const renderListItem = ({ item }) => <GridItem item={item} />
 
@@ -64,11 +73,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
   },
   contentContainerStyle: {
-    paddingVertical: pxToDp(16),
+    paddingVertical: 16,
   },
   noDataText: {
     alignSelf: 'center',
-    marginVertical: pxToDp(16),
+    marginVertical: 16,
     fontSize: 16,
   },
 })
