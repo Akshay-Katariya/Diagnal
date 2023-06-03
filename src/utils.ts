@@ -7,6 +7,8 @@ export const pxToDp = (px: number): number => {
   return dp
 }
 
+export const MIN_SEARCH_LIMIT = 3
+
 export const getPoster = (image: string) => {
   switch (image) {
     case 'poster1.jpg':

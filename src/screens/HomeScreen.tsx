@@ -4,8 +4,7 @@ import GridItem from '../components/GridItem'
 import Header from '../components/Header'
 import SearchInput from '../components/SearchInput'
 import useDataFetching from '../hooks/useDataFetching'
-
-const MIN_LIMIT = 3
+import { MIN_SEARCH_LIMIT } from '../utils'
 
 const HomeScreen = () => {
   const [searchQuery, setSearchQuery] = useState('')
@@ -32,7 +31,7 @@ const HomeScreen = () => {
   }
 
   useEffect(() => {
-    if (searchQuery.length >= MIN_LIMIT) {
+    if (searchQuery.length >= MIN_SEARCH_LIMIT) {
       const filteredData = data.filter((item: Content) => item.name.toLowerCase().includes(searchQuery.toLowerCase()))
       setFilteredData(filteredData)
       setHasSearchResults(filteredData.length > 0)
@@ -42,7 +41,7 @@ const HomeScreen = () => {
     }
   }, [data, searchQuery])
 
-  const renderListItem = ({ item }) => <GridItem item={item} />
+  const renderListItem = ({ item }) => <GridItem highlight={searchQuery} item={item} />
 
   return (
     <View style={styles.container}>
