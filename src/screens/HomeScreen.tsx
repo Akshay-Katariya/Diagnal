@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
   },
   contentContainerStyle: {
-    paddingVertical: 16,
+    paddingVertical: 60,
   },
   noDataText: {
     alignSelf: 'center',

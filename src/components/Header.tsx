@@ -14,7 +14,7 @@ const backIcon = require('../assets/Back.png')
 const searchIcon = require('../assets/search.png')
 const headerImage = require('../assets/nav_bar.png')
 
-const headerHeight = () => pxToDp(192 - 36)
+const headerHeight = () => 80
 
 const Header: React.FC<HeaderProps> = ({ title, onBackPress, onSearchPress }) => {
   return (
@@ -30,10 +30,14 @@ const Header: React.FC<HeaderProps> = ({ title, onBackPress, onSearchPress }) =>
 
 const styles = StyleSheet.create({
   header: {
+    position: 'absolute',
+    zIndex: 1,
     height: headerHeight(),
     width: '100%',
+    resizeMode: 'center',
   },
   container: {
+    marginTop: 10,
     paddingHorizontal: pxToDp(30),
     flexDirection: 'row',
     justifyContent: 'space-between',
