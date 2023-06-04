@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { ActivityIndicator, FlatList, StyleSheet, Text, View } from 'react-native'
+import { FlatList, StyleSheet, View } from 'react-native'
+import AppText from '../components/AppText'
 import GridItem from '../components/GridItem'
 import Header from '../components/Header'
 import SearchInput from '../components/SearchInput'
@@ -43,16 +44,12 @@ const HomeScreen = () => {
 
   const renderListItem = ({ item }) => <GridItem highlight={searchQuery} item={item} />
 
-  const renderFooter = (): React.ReactElement | null => {
-    return page < 3 ? <ActivityIndicator size="large" /> : null
-  }
-
   return (
     <View style={styles.container}>
       <Header title={title} onBackPress={clearSearch} onSearchPress={toggleSearch} />
 
       {showSearch && <SearchInput value={searchQuery} onChangeText={handleSearch} onSubmitEditing={toggleSearch} />}
-      {!hasSearchResults && <Text style={styles.noDataText}>{`No search results found 🤷`}</Text>}
+      {!hasSearchResults && <AppText style={styles.noDataText}>{`No search results found 🤷`}</AppText>}
 
       <FlatList
         data={filteredData}
@@ -64,7 +61,6 @@ const HomeScreen = () => {
         showsVerticalScrollIndicator={false}
         showsHorizontalScrollIndicator={false}
         columnWrapperStyle={{}}
-        ListFooterComponent={renderFooter}
         contentContainerStyle={[showSearch ? { paddingTop: 0 } : styles.contentContainerStyle]}
       />
     </View>

@@ -4,7 +4,7 @@ import HomeScreen from './src/screens/HomeScreen'
 
 const App = () => {
   return (
-    <View style={styles.container}>
+    <View testID="container" style={styles.container}>
       <HomeScreen />
     </View>
   )
