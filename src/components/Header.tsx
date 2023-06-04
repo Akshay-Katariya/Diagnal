@@ -1,6 +1,5 @@
 import React from 'react'
 import { ImageBackground, StyleSheet, View } from 'react-native'
-import { pxToDp } from '../utils'
 import AppText from './AppText'
 import ClickableImage from './ClickableImage'
 
@@ -38,7 +37,7 @@ const styles = StyleSheet.create({
   },
   container: {
     marginTop: 10,
-    paddingHorizontal: pxToDp(30),
+    paddingHorizontal: 12,
     flexDirection: 'row',
     justifyContent: 'space-between',
   },

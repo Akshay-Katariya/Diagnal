@@ -1,7 +1,7 @@
 import HighlightText from '@sanar/react-native-highlight-text'
 import React from 'react'
 import { Image, StyleSheet, View } from 'react-native'
-import { MIN_SEARCH_LIMIT, getPoster, pxToDp } from '../utils'
+import { MIN_SEARCH_LIMIT, getPoster } from '../utils'
 import { customTextStyle } from './TextStyles'
 
 interface GridItemProps {
@@ -34,7 +34,7 @@ const GridItem: React.FC<GridItemProps> = ({ item, highlight }) => {
 const styles = StyleSheet.create({
   gridItem: {
     flex: 1,
-    margin: pxToDp(30),
+    margin: 10,
   },
   item: {
     flex: 1,

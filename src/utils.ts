@@ -1,12 +1,3 @@
-import { PixelRatio } from 'react-native'
-
-// function to convert pixels to device-independent pixels
-export const pxToDp = (px: number): number => {
-  const devicePixelRatio = PixelRatio.get()
-  const dp = px / devicePixelRatio
-  return dp
-}
-
 export const MIN_SEARCH_LIMIT = 3
 
 export const getPoster = (image: string) => {
