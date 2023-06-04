@@ -21,6 +21,7 @@ const GridItem: React.FC<GridItemProps> = ({ item, highlight }) => {
         <Image source={getPoster(item['poster-image'])} style={styles.image} />
       </View>
       <HighlightText
+        numberOfLines={1}
         style={customTextStyle}
         highlightStyle={[shouldHighlight && styles.highlight]}
         searchWords={[highlight]}
