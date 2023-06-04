@@ -4,11 +4,12 @@ import { Image, ImageSourcePropType, StyleSheet, TouchableOpacity } from 'react-
 interface ClickableImageProps {
   source: ImageSourcePropType
   onPress: () => void
+  testID: string
 }
 
-const ClickableImage: React.FC<ClickableImageProps> = ({ source, onPress }) => {
+const ClickableImage: React.FC<ClickableImageProps> = ({ source, onPress, testID }) => {
   return (
-    <TouchableOpacity style={styles.container} onPress={onPress}>
+    <TouchableOpacity testID={testID} style={styles.container} onPress={onPress}>
       <Image source={source} style={styles.image} />
     </TouchableOpacity>
   )

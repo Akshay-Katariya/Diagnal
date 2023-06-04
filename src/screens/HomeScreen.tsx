@@ -7,7 +7,11 @@ import SearchInput from '../components/SearchInput'
 import useDataFetching from '../hooks/useDataFetching'
 import { MIN_SEARCH_LIMIT } from '../utils'
 
-const HomeScreen = ({ testID }: string) => {
+interface HomeScreenProps {
+  testID?: string
+}
+
+const HomeScreen: React.FC<HomeScreenProps> = ({ testID }) => {
   const [searchQuery, setSearchQuery] = useState('')
   const { data, title, handleLoadMore, page } = useDataFetching([])
   const [showSearch, setShowSearch] = useState(false)

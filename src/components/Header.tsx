@@ -17,11 +17,11 @@ const headerHeight = () => 80
 
 const Header: React.FC<HeaderProps> = ({ title, onBackPress, onSearchPress }) => {
   return (
-    <ImageBackground source={headerImage} style={styles.header}>
+    <ImageBackground testID="header" source={headerImage} style={styles.header}>
       <View style={styles.container}>
-        <ClickableImage source={backIcon} onPress={onBackPress} />
+        <ClickableImage testID="go-back" source={backIcon} onPress={onBackPress} />
         <AppText style={styles.title}>{title}</AppText>
-        <ClickableImage source={searchIcon} onPress={onSearchPress} />
+        <ClickableImage testID="toggle-search-button" source={searchIcon} onPress={onSearchPress} />
       </View>
     </ImageBackground>
   )

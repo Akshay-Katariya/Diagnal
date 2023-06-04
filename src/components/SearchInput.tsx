@@ -10,6 +10,7 @@ interface SearchInputProps {
 const SearchInput: React.FC<SearchInputProps> = ({ value, onChangeText, onSubmitEditing }) => {
   return (
     <TextInput
+      testID="search-input"
       autoFocus
       style={styles.searchInput}
       placeholder="Search movie"
