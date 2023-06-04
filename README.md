@@ -1,3 +1,4 @@
+
 # Diagnal React Native Workshop 
 
 **Functional Requirements** 
@@ -8,7 +9,7 @@
 3.	The listing page must have three vertically scrollable columns which is not horizontally scrollable with no visible scroll bars.
 
 
-## Installation
+## Installation 📲
 
 Environment setup:
 
@@ -20,7 +21,14 @@ OpenJDK: 11
     cd android && ./gradlew clean && cd ..
     npx react-native run-android
 
-## Screenshots
+## Publishing the App 🚀
+
+- The app is built using GitHub Actions and utilizes GitHub CI/CD for building the Android app. 
+- The signed APK is published under the release section of the GitHub repository. Please refer to the repository's release section to download the latest signed APK for Android.
+
+[Download APK](https://github.com/Akshay-Katariya/Diagnal/releases)
+
+## Screenshots 📱
 
 These screenshot shows represent following use case
 
