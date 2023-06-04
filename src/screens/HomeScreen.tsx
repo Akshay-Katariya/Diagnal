@@ -60,7 +60,7 @@ const HomeScreen = () => {
         keyExtractor={(item, index) => `${item.name}_${index}`}
         numColumns={3}
         onEndReached={handleLoadMore}
-        onEndReachedThreshold={0.8}
+        onEndReachedThreshold={0.5}
         showsVerticalScrollIndicator={false}
         showsHorizontalScrollIndicator={false}
         columnWrapperStyle={{}}
