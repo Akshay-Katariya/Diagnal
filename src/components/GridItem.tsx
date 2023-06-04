@@ -27,7 +27,6 @@ const GridItem: React.FC<GridItemProps> = ({ item, highlight }) => {
         searchWords={[highlight]}
         textToHighlight={item.name}
       />
-      {/* <Text style={customTextStyle}>{item.name}</Text> */}
     </View>
   )
 }

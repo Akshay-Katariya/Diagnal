@@ -1,14 +1,13 @@
-/**
- * @format
- */
+import { render } from '@testing-library/react-native'
+import React from 'react'
+import App from '../App'
 
-import 'react-native';
-import React from 'react';
-import App from '../App';
-
-// Note: test renderer must be required after react-native.
-import renderer from 'react-test-renderer';
-
-it('renders correctly', () => {
-  renderer.create(<App />);
-});
+describe('App', () => {
+  it('renders the App component correctly', () => {
+    const { getByTestId } = render(<App />)
+    const container = getByTestId('container')
+    expect(container).toBeTruthy()
+    const homeScreen = getByTestId('home-screen')
+    expect(homeScreen).toBeTruthy()
+  })
+})

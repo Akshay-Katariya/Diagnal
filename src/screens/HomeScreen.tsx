@@ -7,7 +7,7 @@ import SearchInput from '../components/SearchInput'
 import useDataFetching from '../hooks/useDataFetching'
 import { MIN_SEARCH_LIMIT } from '../utils'
 
-const HomeScreen = () => {
+const HomeScreen = ({ testID }: string) => {
   const [searchQuery, setSearchQuery] = useState('')
   const { data, title, handleLoadMore, page } = useDataFetching([])
   const [showSearch, setShowSearch] = useState(false)
@@ -45,7 +45,7 @@ const HomeScreen = () => {
   const renderListItem = ({ item }) => <GridItem highlight={searchQuery} item={item} />
 
   return (
-    <View style={styles.container}>
+    <View testID={testID} style={styles.container}>
       <Header title={title} onBackPress={clearSearch} onSearchPress={toggleSearch} />
 
       {showSearch && <SearchInput value={searchQuery} onChangeText={handleSearch} onSubmitEditing={toggleSearch} />}
