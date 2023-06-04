@@ -13,7 +13,7 @@ interface GridItemProps {
 }
 
 const GridItem: React.FC<GridItemProps> = ({ item, highlight }) => {
-  const shouldHighlight = highlight.length > MIN_SEARCH_LIMIT
+  const shouldHighlight = highlight.length >= MIN_SEARCH_LIMIT
 
   return (
     <View style={styles.gridItem}>
