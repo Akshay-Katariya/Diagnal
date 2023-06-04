@@ -1,5 +1,7 @@
+// Home screen search limit parameter
 export const MIN_SEARCH_LIMIT = 3
 
+// Image util to get poster or return missing poster
 export const getPoster = (image: string) => {
   switch (image) {
     case 'poster1.jpg':

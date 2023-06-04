@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   },
   container: {
     marginTop: 10,
-    paddingHorizontal: 12,
+    paddingHorizontal: 4,
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
@@ -47,9 +47,6 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginLeft: 8,
     flex: 1,
-  },
-  searchButton: {
-    padding: 8,
   },
 })
 

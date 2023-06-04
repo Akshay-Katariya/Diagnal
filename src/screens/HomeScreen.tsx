@@ -25,6 +25,8 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ testID }) => {
 
   const toggleSearch = () => setShowSearch(!showSearch)
 
+  // on back press app wont exit as it is single page application
+  // Implemented clear search text and set textinput to initial state when back button is pressed
   const clearSearch = () => {
     setSearchQuery('')
     setShowSearch(false)
@@ -35,6 +37,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ testID }) => {
     setSearchQuery(query)
   }
 
+  // useEffect to perform search based on condition
   useEffect(() => {
     if (searchQuery.length >= MIN_SEARCH_LIMIT) {
       const filteredData = data.filter((item: Content) => item.name.toLowerCase().includes(searchQuery.toLowerCase()))
@@ -46,22 +49,21 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ testID }) => {
     }
   }, [data, searchQuery])
 
+  // render FlatList Grid
   const renderListItem = ({ item }) => <GridItem highlight={searchQuery} item={item} />
 
   return (
     <View testID={testID} style={styles.container}>
       <Header title={title} onBackPress={clearSearch} onSearchPress={toggleSearch} />
-
       {showSearch && <SearchInput value={searchQuery} onChangeText={handleSearch} onSubmitEditing={toggleSearch} />}
       {!hasSearchResults && <AppText style={styles.noDataText}>{`No search results found 🤷`}</AppText>}
-
       <FlatList
         data={filteredData}
         renderItem={renderListItem}
         keyExtractor={(item, index) => `${item.name}_${index}`}
         numColumns={3}
         onEndReached={handleLoadMore}
-        onEndReachedThreshold={0.5}
+        onEndReachedThreshold={0.5} //we can set thrreshold to our need
         showsVerticalScrollIndicator={false}
         showsHorizontalScrollIndicator={false}
         columnWrapperStyle={{}}
