@@ -13,6 +13,7 @@ const backIcon = require('../assets/Back.png')
 const searchIcon = require('../assets/search.png')
 const headerImage = require('../assets/nav_bar.png')
 
+// extracted to function in order to do some calculation
 const headerHeight = () => 80
 
 const Header: React.FC<HeaderProps> = ({ title, onBackPress, onSearchPress }) => {

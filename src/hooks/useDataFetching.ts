@@ -8,7 +8,7 @@ interface DataItem {
   name: string
   'poster-image': string
 }
-
+// custom hook to fetch JSON locally and handle load more data on pagination
 const useDataFetching = (initialData: DataItem[]) => {
   const [data, setData] = useState<DataItem[]>(initialData)
   const [page, setPage] = useState<number>(1)
